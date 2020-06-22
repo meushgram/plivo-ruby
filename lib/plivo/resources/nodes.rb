@@ -15,7 +15,7 @@ module Plivo
       def configure_node_type(node_type)
         case node_type
         when 'multi_party_call'
-          MultiPartyCall
+          MultiPartyCalls
         # when 'conference_bridge'
         #   ConferenceBridge
         end
@@ -51,7 +51,7 @@ module Plivo
       end
     end
 
-    class MultiPartyCall < Node
+    class MultiPartyCalls < Node
       def initialize(client,options=nil)
         @_name = 'multi_party_call'
         super
