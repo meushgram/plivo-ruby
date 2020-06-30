@@ -64,7 +64,6 @@ module Plivo
       end
 
       def perform_action(action = nil, method = 'GET', params = nil, parse = false)
-        puts params
         resource_path = action ? @_resource_uri + action + '/' : @_resource_uri
         response = @_client.send_request(resource_path, method, params)
         parse ? parse_and_set(response) : self
