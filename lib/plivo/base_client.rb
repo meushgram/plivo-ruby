@@ -42,7 +42,6 @@ module Plivo
 
     def send_request(resource_path, method = 'GET', data = {}, timeout = nil, use_multipart_conn = false)
       timeout ||= @timeout
-
       response = case method
                  when 'GET' then send_get(resource_path, data, timeout)
                  when 'POST' then send_post(resource_path, data, timeout, use_multipart_conn)
@@ -165,7 +164,6 @@ module Plivo
           req.url resource_path
           req.options.timeout = timeout if timeout
           req.body = data
-          puts req
         end
       else
         if !data.nil? && (data.has_key? 'is_callinsights_request')
